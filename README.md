@@ -1,7 +1,6 @@
-
-
-iTerm2 and zsh
---------------
+iTerm2
+------
+- load the colorscheme from `Snazzy.itermcolors`
 
 - make ⌥+←/→ work:
 
