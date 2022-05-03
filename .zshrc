@@ -39,8 +39,13 @@ done
 compinit -C
 
 # Fancy ZSH improvements
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -d /usr/share/zsh/plugins ]; then
+    zsh_plugin_dir=/usr/share/zsh/plugins
+else
+    zsh_plugin_dir=/usr/local/share
+fi
+[ -f $zsh_plugin_dir/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $zsh_plugin_dir/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f $zsh_plugin_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $zsh_plugin_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Enable fuzzy finder
 FZF_DEFAULT_OPTS="--layout=reverse --border=rounded --info=inline"
