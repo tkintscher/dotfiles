@@ -21,7 +21,9 @@ elif [ `uname` = "Linux" ]; then
     # Linux specific stuff
     fzf_bin_dir=/usr/bin
     fzf_shell_dir=/usr/share/fzf
+    [ ! -d $fzf_shell_dir ] && fzf_shell_dir=/usr/share/doc/fzf/examples
     zsh_plugin_dir=/usr/share/zsh/plugins
+    [ ! -d $zsh_plugin_dir ] && zsh_plugin_dir=/usr/share
 
 fi
 
