@@ -65,5 +65,4 @@ FZF_DEFAULT_OPTS="--layout=reverse --border=rounded --info=inline"
 [[ ! "$PATH" == *$fzf_bin_dir* ]] && export PATH="${PATH:+${PATH}:}$fzf_bin_dir"
 [[ $- == *i* ]] && source "$fzf_shell_dir/completion.zsh" 2> /dev/null
 source "$fzf_shell_dir/key-bindings.zsh"
-echo $fzf_shell_dir
 
