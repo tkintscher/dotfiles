@@ -1,0 +1,108 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# Import additional configuration files
+import:
+  # - ~/.config/alacritty/material_ocean.yml
+  - ~/.config/alacritty/snazzy.yml
+
+#env:
+#  TERM: alacritty
+
+window:
+  # Window dimensions (changes require restart)
+  dimensions:
+    columns: 100
+    lines: 25
+
+  # Window padding (changes require restart)
+  padding:
+    x: 4
+    y: 4
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background and no title bar buttons
+  decorations: full
+
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  #opacity: 1.0
+
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Scrolling distance multiplier.
+  multiplier: 3
+
+# Font configuration
+font:
+  normal:
+    # Font family
+    family: MesloLGS NF
+
+    # The `style` can be specified to pick a specific face.
+    style: Regular
+
+  # Point size
+  size: 13.0
+
+  # Offset each character
+  offset:
+    x: 0
+    y: 1
+
+  # Center text within line (i.e. not bottom aligned) (required restart)
+  glyph_offset:
+    x: 0
+    y: 0
+
+  # Thin stroke font rendering (macOS only)
+  #
+  # Thin strokes are suitable for retina displays, but for non-retina screens
+  # it is recommended to set `use_thin_strokes` to `false`.
+  use_thin_strokes: true
+
+  # Use built-in font for box drawing characters.
+  #
+  # If `true`, Alacritty will use a custom built-in font for box drawing
+  # characters (Unicode points 2500 - 259f).
+  #
+  builtin_box_drawing: true
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: false
+
+# Use custom cursor colors. If true, display the cursor in the cursor.foreground
+# and cursor.background colors, otherwise invert the colors of the cursor.
+custom_cursor_colors: true
+
+# Visual Bell
+bell:
+  animation: EaseOutExpo
+  color: '0xffffff'
+  duration: 0
+
+key_bindings:
+  - key: N
+    mods: Command
+    action: CreateNewWindow
+

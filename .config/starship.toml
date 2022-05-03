@@ -1,0 +1,12 @@
+add_newline = true
+
+[nodejs]
+disabled = true
+
+[package]
+disabled = true
+
+[rust]
+disabled = true
+
+format = "$all"
