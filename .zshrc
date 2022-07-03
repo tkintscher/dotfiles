@@ -8,6 +8,9 @@ precmd_functions+=(set_window_title)
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
+# Default to emacs keymap
+bindkey -e
+
 if [ `uname` = "Darwin" ]; then
     # MacOS specific stuff
     fzf_bin_dir=/usr/local/opt/fzf/bin
