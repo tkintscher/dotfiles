@@ -36,6 +36,9 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --no-use
 
+# Load Rust
+[[ ! "$PATH" == *cargo/bin* && -d $HOME/.cargo/bin ]] && export PATH="$HOME/.cargo/bin:$PATH"
+
 # Load Ruby
 rbenv() {
     echo "Ruby env not loaded! Loading now..."
@@ -56,7 +59,7 @@ export LS_COLORS='mi=0;38;2;0;0;0;48;2;255;92;87:pi=0;38;2;0;0;0;48;2;87;199;255
 # ZSH auto-completions
 autoload -Uz compinit
 # check cache only once a day
-for dump in ~/.zcompdump(N.mh+24); do
+for dump in $HOME/.zcompdump(N.mh+24); do
     compinit
 done
 compinit -C
@@ -65,7 +68,7 @@ zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # ZSH history
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.zsh_history
 setopt share_history
 
 # Fancy ZSH improvements
