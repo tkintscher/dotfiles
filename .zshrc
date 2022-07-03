@@ -64,6 +64,10 @@ compinit -C
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
+# ZSH history
+HISTFILE=~/.zsh_history
+setopt share_history
+
 # Fancy ZSH improvements
 for plugin_name in \
     $zsh_plugin_dir/zsh-autosuggestions/zsh-autosuggestions.zsh \
@@ -73,8 +77,10 @@ do
 done
 
 # Enable fuzzy finder
-FZF_DEFAULT_OPTS="--layout=reverse --border=rounded --info=inline"
-[[ ! "$PATH" == *$fzf_bin_dir* ]] && export PATH="${PATH:+${PATH}:}$fzf_bin_dir"
-[[ $- == *i* ]] && source "$fzf_shell_dir/completion.zsh" 2> /dev/null
-source "$fzf_shell_dir/key-bindings.zsh"
+if [ -n "$fzf_shell_dir" ]; then
+    FZF_DEFAULT_OPTS="--layout=reverse --border=rounded --info=inline"
+    #[[ ! "$PATH" == *$fzf_bin_dir* ]] && export PATH="${PATH:+${PATH}:}$fzf_bin_dir"
+    #[[ $- == *i* ]] && source "$fzf_shell_dir/completion.zsh" 2> /dev/null
+    source "$fzf_shell_dir/key-bindings.zsh"
+fi
 
