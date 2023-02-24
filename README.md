@@ -5,7 +5,7 @@ iTerm2
 - make ⌥+←/→ work:
 
   Edit iTerms key mappings and set them to:
-  
+
   `0x1b 0x62 / 0x1b 0x66`
 
 nvm
@@ -14,3 +14,10 @@ nvm
 
   `nvm init`
 
+git
+---
+
+Enable global `.gitignore` file:
+```
+git config --global core.excludesFile="${HOME}/.dotfiles/.gitignore"
+```
