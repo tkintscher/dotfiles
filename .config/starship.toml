@@ -9,6 +9,9 @@ disabled = true
 [package]
 disabled = true
 
+[python]
+format = 'via [${symbol}${pyenv_prefix}($virtualenv )]($style)'
+
 [rust]
 disabled = true
 
