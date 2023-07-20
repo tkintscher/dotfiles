@@ -17,7 +17,21 @@ nvm
 git
 ---
 
+Set global user details:
+```
+git config --global user.name "Foo Bar"
+git config --global user.email "foo@example.com"
+```
+
 Enable global `.gitignore` file:
 ```
-git config --global core.excludesFile="${HOME}/.dotfiles/.gitignore"
+git config --global core.excludesFile "${HOME}/.dotfiles/.gitignore"
 ```
+
+Add per-project configuration in `~/.gitconfig`:
+```
+[includeIf "gitdir:~/Work/"]
+	path = ~/Work/.gitconfig
+```
+Then project-specifig configuration may be put in these
+`.gitconfig` files and apply only to that folder.
