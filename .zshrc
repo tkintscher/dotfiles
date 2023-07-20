@@ -13,12 +13,12 @@ bindkey -e
 
 if [ `uname` = "Darwin" ]; then
     # MacOS specific stuff
-    fzf_bin_dir=/usr/local/opt/fzf/bin
-    fzf_shell_dir=/usr/local/opt/fzf/shell
-    zsh_plugin_dir=/usr/local/share
+    fzf_bin_dir=/opt/homebrew/opt/fzf/bin
+    fzf_shell_dir=/opt/homebrew/opt/fzf/shell
+    zsh_plugin_dir=/opt/homebrew/share
 
     # Add Homebrew sbin to path
-    [[ ! "$PATH" == */usr/local/sbin* ]] && export PATH="/usr/local/sbin:$PATH"
+    #[[ ! "$PATH" == */usr/local/sbin* ]] && export PATH="/usr/local/sbin:$PATH"
 
     alias ls='ls -G'
 
@@ -41,6 +41,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load Rust
 [[ ! "$PATH" == *cargo/bin* && -d $HOME/.cargo/bin ]] && export PATH="$HOME/.cargo/bin:$PATH"
+
+# Load Python user packages
+PY_DIR=$(python3 -m site --user-base)/bin
+[[ ! "$PATH" == **PY_DIR** && -d $PY_DIR ]] && export PATH="$PY_DIR:$PATH"
 
 # Load Ruby
 rbenv() {
